@@ -868,6 +868,75 @@ button:focus {
   padding: 3.5rem 0;
 }
 
+.section-shell > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-shell.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-shell.is-visible > *:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.section-shell.is-visible > *:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.section-shell.is-visible > *:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+.section-shell.is-visible > *:nth-child(5) {
+  transition-delay: 0.32s;
+}
+
+.section-shell.is-visible .project-card,
+.section-shell.is-visible .skill-panel,
+.section-shell.is-visible .service-card,
+.section-shell.is-visible .timeline-item {
+  animation: card-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.section-shell.is-visible .project-card:nth-child(2),
+.section-shell.is-visible .skill-panel:nth-child(2),
+.section-shell.is-visible .service-card:nth-child(2),
+.section-shell.is-visible .timeline-item:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.section-shell.is-visible .project-card:nth-child(3),
+.section-shell.is-visible .skill-panel:nth-child(3),
+.section-shell.is-visible .service-card:nth-child(3),
+.section-shell.is-visible .timeline-item:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-shell > *,
+  .section-shell.is-visible > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none !important;
+  }
+}
+
 .hero-section {
   position: relative;
   padding-top: 2rem;

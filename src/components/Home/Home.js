@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FiArrowRight, FiArrowUpRight, FiMail, FiLinkedin, FiGithub, FiTwitter } from "react-icons/fi";
 import resumePdf from "../../Assets/Naman_Dubey.pdf";
 import avatarImg from "../../Assets/avatar.svg";
@@ -86,8 +86,34 @@ const services = [
 ];
 
 function Home() {
+  const portfolioRef = useRef(null);
+
+  useEffect(() => {
+    const revealTargets = portfolioRef.current?.querySelectorAll(".section-shell");
+
+    if (!revealTargets || !("IntersectionObserver" in window)) {
+      return undefined;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    revealTargets.forEach((target) => revealObserver.observe(target));
+
+    return () => revealObserver.disconnect();
+  }, []);
+
   return (
-    <main className="portfolio-shell">
+    <main className="portfolio-shell" ref={portfolioRef}>
       <section className="hero-section" id="home">
         <div className="section-shell hero-shell">
           <div className="hero-copy">
@@ -195,7 +221,7 @@ function Home() {
       <section className="trajectory-section" id="experience">
         <div className="section-shell">
           <div className="section-intro">
-            <div className="eyebrow">(003) — Trajectory</div>
+            <div className="eyebrow">Trajectory</div>
             <h2>
               The journey <span>so far.</span>
             </h2>
