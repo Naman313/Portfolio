@@ -13,7 +13,7 @@ function AboutCard() {
             <br />
             
             <br />
-            I am persuing my B.tech from MITS Gwalior
+            I am a fullstack developer with 1.5+ years of experience
             <br />
             <br />
             Apart from coding, some other activities that I love to do!
