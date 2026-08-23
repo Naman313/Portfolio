@@ -1,8 +1,67 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --bg-900: #050816;
+  --bg-800: #0b1020;
+  --bg-700: #111827;
+  --panel: rgba(17, 24, 39, 0.66);
+  --panel-strong: rgba(15, 23, 42, 0.82);
+  --line: rgba(148, 163, 184, 0.2);
+  --line-strong: rgba(103, 232, 249, 0.45);
+  --text: #edf2ff;
+  --muted: #c8d1ea;
+  --soft: #9aa8c7;
+  --accent: #7dd3fc;
+  --accent-2: #a78bfa;
+  --glow: rgba(125, 211, 252, 0.25);
+  --shadow: 0 20px 60px rgba(2, 6, 23, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: "Raleway", serif !important;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(62, 101, 164, 0.2), transparent 28%),
+    radial-gradient(circle at 80% 15%, rgba(167, 139, 250, 0.17), transparent 20%),
+    linear-gradient(180deg, #040912 0%, #090d1a 45%, #070d18 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(125, 211, 252, 0.35);
+  color: var(--text);
 }

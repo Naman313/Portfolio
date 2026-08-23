@@ -1,70 +1,20 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Naman Dubey</h3>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} ND</h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/Naman313"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://x.com/NamanDu50483312"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/naman-dubey-545aa1228/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://leetcode.com/u/naman_dubey3131/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+    <footer className="site-footer">
+      <div className="section-shell footer-shell">
+        <div className="footer-copy">© 2026 Naman Dubey — All rights reserved</div>
+        <div className="footer-note">Handcrafted with care in Gwalior, IN</div>
+        <div className="footer-links">
+          <a href="https://github.com/Naman313" target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub /></a>
+          <a href="https://www.linkedin.com/in/naman-dubey-545aa1228/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin /></a>
+          <a href="https://x.com/NamanDu50483312" target="_blank" rel="noreferrer" aria-label="Twitter"><FiTwitter /></a>
+          <a href="mailto:naman.dubey313@gmail.com" aria-label="Email"><FiMail /></a>
+        </div>
+      </div>
+    </footer>
   );
 }
 
