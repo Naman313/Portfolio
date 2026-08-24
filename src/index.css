@@ -1,20 +1,111 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 :root {
-  --bg-900: #080b12;
-  --bg-800: #10151d;
-  --bg-700: #171d27;
-  --panel: rgba(23, 29, 39, 0.66);
-  --panel-strong: rgba(13, 16, 24, 0.82);
-  --line: rgba(199, 197, 189, 0.2);
-  --line-strong: rgba(255, 128, 102, 0.45);
-  --text: #f2f0e9;
-  --muted: #c7c5bd;
-  --soft: #9ba49f;
-  --accent: #ff8066;
-  --accent-2: #a8e6cf;
-  --glow: rgba(255, 128, 102, 0.22);
-  --shadow: 0 20px 60px rgba(3, 5, 10, 0.5);
+  /* Surface & Backgrounds */
+  --bg-canvas: #080b12;
+  --bg-canvas-gradient: radial-gradient(circle at 50% 0%, rgba(255, 120, 95, 0.14), transparent 36%),
+                        radial-gradient(circle at 85% 20%, rgba(122, 229, 196, 0.1), transparent 28%),
+                        linear-gradient(180deg, #080b12 0%, #0c1018 50%, #080b12 100%);
+  --bg-surface: rgba(16, 22, 34, 0.72);
+  --bg-surface-raised: rgba(22, 30, 46, 0.88);
+  --bg-surface-glass: rgba(16, 22, 34, 0.55);
+  --bg-pill: rgba(255, 120, 95, 0.08);
+
+  /* Borders & Specular Highlights */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-highlight: rgba(255, 120, 95, 0.5);
+  --specular-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --text-primary: #f5f4ef;
+  --text-secondary: #c0c6c2;
+  --text-muted: #858d88;
+  --text-inverse: #080b12;
+
+  /* Accents */
+  --accent-primary: #ff785f;
+  --accent-primary-hover: #ff917d;
+  --accent-secondary: #7ae5c4;
+  --accent-secondary-hover: #98f0d5;
+  --accent-glow: rgba(255, 120, 95, 0.22);
+  --accent-glow-secondary: rgba(122, 229, 196, 0.18);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 32px -4px rgba(0, 0, 0, 0.5), 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.65), 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 20px 48px -8px var(--accent-glow), 0 8px 24px -4px rgba(0, 0, 0, 0.5);
+
+  /* Legacy variable fallbacks for backward compatibility */
+  --bg-900: var(--bg-canvas);
+  --bg-800: #101622;
+  --bg-700: #171f2e;
+  --panel: var(--bg-surface);
+  --panel-strong: var(--bg-surface-raised);
+  --line: var(--border-subtle);
+  --line-strong: var(--border-highlight);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --soft: var(--text-muted);
+  --accent: var(--accent-primary);
+  --accent-2: var(--accent-secondary);
+  --glow: var(--accent-glow);
+  --shadow: var(--shadow-md);
+}
+
+.App[data-theme="light"] {
+  /* Surface & Backgrounds */
+  --bg-canvas: #f6f3ea;
+  --bg-canvas-gradient: radial-gradient(circle at 50% 0%, rgba(196, 73, 50, 0.08), transparent 38%),
+                        radial-gradient(circle at 85% 20%, rgba(42, 125, 99, 0.07), transparent 30%),
+                        linear-gradient(180deg, #f6f3ea 0%, #ede7da 50%, #f7f4ec 100%);
+  --bg-surface: rgba(255, 255, 255, 0.82);
+  --bg-surface-raised: rgba(255, 255, 255, 0.95);
+  --bg-surface-glass: rgba(255, 255, 255, 0.65);
+  --bg-pill: rgba(196, 73, 50, 0.08);
+
+  /* Borders & Specular Highlights */
+  --border-subtle: rgba(41, 45, 42, 0.1);
+  --border-medium: rgba(41, 45, 42, 0.18);
+  --border-highlight: rgba(196, 73, 50, 0.48);
+  --specular-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+
+  /* Typography */
+  --text-primary: #1e2220;
+  --text-secondary: #454c47;
+  --text-muted: #6f7872;
+  --text-inverse: #fcfbfa;
+
+  /* Accents */
+  --accent-primary: #c44932;
+  --accent-primary-hover: #ab3c26;
+  --accent-secondary: #277860;
+  --accent-secondary-hover: #1e614d;
+  --accent-glow: rgba(196, 73, 50, 0.14);
+  --accent-glow-secondary: rgba(39, 120, 96, 0.12);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 4px 12px rgba(60, 52, 40, 0.05);
+  --shadow-md: 0 12px 32px -4px rgba(60, 52, 40, 0.08), 0 4px 12px -2px rgba(60, 52, 40, 0.04);
+  --shadow-lg: 0 24px 60px -12px rgba(60, 52, 40, 0.12), 0 8px 24px -4px rgba(60, 52, 40, 0.06);
+  --shadow-hover: 0 20px 48px -8px var(--accent-glow), 0 8px 20px -4px rgba(60, 52, 40, 0.08);
+
+  /* Legacy variable fallbacks */
+  --bg-900: var(--bg-canvas);
+  --bg-800: #eee8db;
+  --bg-700: #e4dccb;
+  --panel: var(--bg-surface);
+  --panel-strong: var(--bg-surface-raised);
+  --line: var(--border-subtle);
+  --line-strong: var(--border-highlight);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --soft: var(--text-muted);
+  --accent: var(--accent-primary);
+  --accent-2: var(--accent-secondary);
+  --glow: var(--accent-glow);
+  --shadow: var(--shadow-md);
 }
 
 html {
@@ -25,17 +116,14 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Manrope", sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at top, rgba(255, 128, 102, 0.13), transparent 28%),
-    radial-gradient(circle at 80% 15%, rgba(168, 230, 207, 0.12), transparent 20%),
-    linear-gradient(180deg, #080b12 0%, #0d121a 45%, #080b12 100%);
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-canvas-gradient);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   overscroll-behavior-x: none;
-  transition: background 0.45s ease, color 0.45s ease;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 h1,
@@ -46,7 +134,12 @@ h5,
 h6,
 .brand-mark,
 .eyebrow,
-.nav-link-item {
+.nav-link-item,
+.timeline-period,
+.skill-heading,
+.service-number,
+.mail-label,
+.connect-label {
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -61,6 +154,7 @@ img {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 button,
@@ -69,77 +163,37 @@ textarea {
   font: inherit;
 }
 
-#root {
+#root,
+.App {
   min-height: 100vh;
 }
 
 .App {
-  min-height: 100vh;
+  color: var(--text-primary);
+  background: var(--bg-canvas-gradient);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
-  background: rgba(125, 211, 252, 0.35);
-  color: var(--text);
+  background: var(--accent-glow);
+  color: var(--accent-primary);
 }
 
-.App {
-  transition: background 0.45s ease, color 0.45s ease;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.App[data-theme="light"] {
-  --bg-900: #f5f1e8;
-  --bg-800: #eee8dc;
-  --bg-700: #e5ded1;
-  --panel: rgba(255, 252, 246, 0.76);
-  --panel-strong: rgba(255, 252, 246, 0.94);
-  --line: rgba(43, 47, 43, 0.16);
-  --line-strong: rgba(190, 79, 58, 0.42);
-  --text: #292d2a;
-  --muted: #5f625d;
-  --soft: #747870;
-  --accent: #be4f3a;
-  --accent-2: #397c68;
-  --glow: rgba(190, 79, 58, 0.16);
-  --shadow: 0 20px 60px rgba(74, 61, 43, 0.12);
-  color: var(--text);
-  background: linear-gradient(180deg, #f5f1e8 0%, #eee8dc 45%, #f8f5ef 100%);
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
 }
 
-.App[data-theme="light"] .topbar {
-  background: rgba(245, 241, 232, 0.78);
-  border-bottom-color: rgba(43, 47, 43, 0.12);
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 999px;
+  border: 2px solid var(--bg-canvas);
 }
 
-.App[data-theme="light"] .nav-link-item,
-.App[data-theme="light"] .secondary-button,
-.App[data-theme="light"] .meta-row,
-.App[data-theme="light"] .about-copy p,
-.App[data-theme="light"] .timeline-body p,
-.App[data-theme="light"] .project-meta p,
-.App[data-theme="light"] .service-card p,
-.App[data-theme="light"] .contact-shell p,
-.App[data-theme="light"] .footer-copy,
-.App[data-theme="light"] .footer-note {
-  color: var(--muted);
-}
-
-.App[data-theme="light"] .portrait-panel,
-.App[data-theme="light"] .project-card,
-.App[data-theme="light"] .skill-panel,
-.App[data-theme="light"] .service-card,
-.App[data-theme="light"] .timeline-item,
-.App[data-theme="light"] .contact-mail-card {
-  background: var(--panel);
-  border-color: var(--line);
-  box-shadow: var(--shadow);
-}
-
-.App[data-theme="light"] .hero-copy h1,
-.App[data-theme="light"] .section-intro h2,
-.App[data-theme="light"] .connect-shell h2,
-.App[data-theme="light"] .closing-shell h2,
-.App[data-theme="light"] .contact-shell h2,
-.App[data-theme="light"] .project-meta h3,
-.App[data-theme="light"] .service-card h3 {
-  color: var(--text);
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
 }
