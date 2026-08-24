@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { FiArrowRight, FiArrowUpRight, FiMail, FiLinkedin, FiGithub, FiTwitter } from "react-icons/fi";
 import resumePdf from "../../Assets/Naman_Dubey.pdf";
-import avatarImg from "../../Assets/avatar.svg";
+import avatarImg from "../../Assets/Naman.jpeg";
 import projectChatify from "../../Assets/Projects/chatify.png";
 import projectLeaf from "../../Assets/Projects/leaf.png";
 
@@ -129,7 +129,7 @@ function Home() {
               </div>
               <div className="meta-row">
                 <span className="meta-label">Role</span>
-                <span>Full Stack Developer</span>
+                <span className="hero-role">Full Stack Developer</span>
               </div>
               <div className="meta-row">
                 <span className="meta-label">Status</span>
@@ -234,7 +234,7 @@ function Home() {
               The journey <span>so far.</span>
             </h2>
           </div>
-          <p className="lead-copy">A practical path shaped by curiosity, problem-solving, and building things that improve how people interact with products.</p>
+          <p className="lead-copy align-center">A practical path shaped by curiosity, problem-solving, and building things that improve how people interact with products.</p>
 
           <div className="timeline">
             {experience.map((item) => (
@@ -259,7 +259,7 @@ function Home() {
               Featured <span>projects</span>
             </h2>
           </div>
-          <p className="lead-copy">Recent work across product, UI, and full-stack delivery</p>
+          <p className="lead-copy projects-lead">Recent work across product, UI, and full-stack delivery</p>
 
           <div className="projects-grid">
             {projectData.map((project) => (

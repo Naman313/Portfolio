@@ -27,7 +27,7 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"} data-theme={theme}>
-        <Navbar theme={theme} onThemeToggle={() => setTheme((value) => value === "dark" ? "light" : "dark")} />
+        <Navbar theme={theme} onThemeToggle={() => setTheme((value) => value === "light" ? "dark" : "light")} />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
