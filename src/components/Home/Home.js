@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { FiArrowRight, FiArrowUpRight, FiMail, FiLinkedin, FiGithub, FiTwitter } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight, FiMail, FiLinkedin, FiGithub, FiTwitter} from "react-icons/fi";
 import resumePdf from "../../Assets/Naman_Dubey.pdf";
 import avatarImg from "../../Assets/Naman.jpeg";
 import projectChatify from "../../Assets/Projects/chatify.png";
