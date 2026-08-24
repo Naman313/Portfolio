@@ -12,17 +12,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, updateLoad] = useState(true);
+  const [theme, setTheme] = useState(() => localStorage.getItem("portfolio-theme") || "dark");
 
   useEffect(() => {
     const timer = setTimeout(() => updateLoad(false), 1200);
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
   return (
     <Router>
       <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+      <div className="App" id={load ? "no-scroll" : "scroll"} data-theme={theme}>
+        <Navbar theme={theme} onThemeToggle={() => setTheme((value) => value === "dark" ? "light" : "dark")} />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />

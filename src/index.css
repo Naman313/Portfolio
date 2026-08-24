@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-x: none;
 }
 
 body {
@@ -32,6 +33,9 @@ body {
     linear-gradient(180deg, #080b12 0%, #0d121a 45%, #080b12 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  transition: background 0.45s ease, color 0.45s ease;
 }
 
 h1,
@@ -75,5 +79,67 @@ textarea {
 
 ::selection {
   background: rgba(125, 211, 252, 0.35);
+  color: var(--text);
+}
+
+.App {
+  transition: background 0.45s ease, color 0.45s ease;
+}
+
+.App[data-theme="light"] {
+  --bg-900: #f5f1e8;
+  --bg-800: #eee8dc;
+  --bg-700: #e5ded1;
+  --panel: rgba(255, 252, 246, 0.76);
+  --panel-strong: rgba(255, 252, 246, 0.94);
+  --line: rgba(43, 47, 43, 0.16);
+  --line-strong: rgba(190, 79, 58, 0.42);
+  --text: #292d2a;
+  --muted: #5f625d;
+  --soft: #747870;
+  --accent: #be4f3a;
+  --accent-2: #397c68;
+  --glow: rgba(190, 79, 58, 0.16);
+  --shadow: 0 20px 60px rgba(74, 61, 43, 0.12);
+  color: var(--text);
+  background: linear-gradient(180deg, #f5f1e8 0%, #eee8dc 45%, #f8f5ef 100%);
+}
+
+.App[data-theme="light"] .topbar {
+  background: rgba(245, 241, 232, 0.78);
+  border-bottom-color: rgba(43, 47, 43, 0.12);
+}
+
+.App[data-theme="light"] .nav-link-item,
+.App[data-theme="light"] .secondary-button,
+.App[data-theme="light"] .meta-row,
+.App[data-theme="light"] .about-copy p,
+.App[data-theme="light"] .timeline-body p,
+.App[data-theme="light"] .project-meta p,
+.App[data-theme="light"] .service-card p,
+.App[data-theme="light"] .contact-shell p,
+.App[data-theme="light"] .footer-copy,
+.App[data-theme="light"] .footer-note {
+  color: var(--muted);
+}
+
+.App[data-theme="light"] .portrait-panel,
+.App[data-theme="light"] .project-card,
+.App[data-theme="light"] .skill-panel,
+.App[data-theme="light"] .service-card,
+.App[data-theme="light"] .timeline-item,
+.App[data-theme="light"] .contact-mail-card {
+  background: var(--panel);
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+
+.App[data-theme="light"] .hero-copy h1,
+.App[data-theme="light"] .section-intro h2,
+.App[data-theme="light"] .connect-shell h2,
+.App[data-theme="light"] .closing-shell h2,
+.App[data-theme="light"] .contact-shell h2,
+.App[data-theme="light"] .project-meta h3,
+.App[data-theme="light"] .service-card h3 {
   color: var(--text);
 }

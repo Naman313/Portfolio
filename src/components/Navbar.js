@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FiMoon, FiMenu, FiX } from "react-icons/fi";
+import { FiMoon, FiMenu, FiSun, FiX } from "react-icons/fi";
 import resumePdf from "../Assets/Naman_Dubey.pdf";
 
-function NavBar() {
+function NavBar({ theme, onThemeToggle }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
@@ -39,8 +39,13 @@ function NavBar() {
           <a href={resumePdf} target="_blank" rel="noreferrer" className="theme-button small-link">
             Resume
           </a>
-          <button type="button" className="theme-button" aria-label="Toggle theme">
-            <FiMoon />
+          <button
+            type="button"
+            className="theme-button"
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            onClick={onThemeToggle}
+          >
+            {theme === "dark" ? <FiSun /> : <FiMoon />}
           </button>
           <button
             type="button"
