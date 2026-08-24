@@ -151,9 +151,11 @@ function Home() {
           </div>
 
           <div className="hero-visual" aria-label="Abstract developer profile art">
-            <div className="orb orb-one" />
-            <div className="orb orb-two" />
-            <div className="orb orb-three" />
+            <div className="hero-orbit" aria-hidden="true">
+              <div className="orb orb-one" />
+              <div className="orb orb-two" />
+              <div className="orb orb-three" />
+            </div>
             <div className="hero-badge">→ An artifact from the void.</div>
           </div>
         </div>

@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 :root {
-  --bg-900: #050816;
-  --bg-800: #0b1020;
-  --bg-700: #111827;
-  --panel: rgba(17, 24, 39, 0.66);
-  --panel-strong: rgba(15, 23, 42, 0.82);
-  --line: rgba(148, 163, 184, 0.2);
-  --line-strong: rgba(103, 232, 249, 0.45);
-  --text: #edf2ff;
-  --muted: #c8d1ea;
-  --soft: #9aa8c7;
-  --accent: #7dd3fc;
-  --accent-2: #a78bfa;
-  --glow: rgba(125, 211, 252, 0.25);
-  --shadow: 0 20px 60px rgba(2, 6, 23, 0.5);
+  --bg-900: #080b12;
+  --bg-800: #10151d;
+  --bg-700: #171d27;
+  --panel: rgba(23, 29, 39, 0.66);
+  --panel-strong: rgba(13, 16, 24, 0.82);
+  --line: rgba(199, 197, 189, 0.2);
+  --line-strong: rgba(255, 128, 102, 0.45);
+  --text: #f2f0e9;
+  --muted: #c7c5bd;
+  --soft: #9ba49f;
+  --accent: #ff8066;
+  --accent-2: #a8e6cf;
+  --glow: rgba(255, 128, 102, 0.22);
+  --shadow: 0 20px 60px rgba(3, 5, 10, 0.5);
 }
 
 html {
@@ -27,9 +27,9 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top, rgba(62, 101, 164, 0.2), transparent 28%),
-    radial-gradient(circle at 80% 15%, rgba(167, 139, 250, 0.17), transparent 20%),
-    linear-gradient(180deg, #040912 0%, #090d1a 45%, #070d18 100%);
+    radial-gradient(circle at top, rgba(255, 128, 102, 0.13), transparent 28%),
+    radial-gradient(circle at 80% 15%, rgba(168, 230, 207, 0.12), transparent 20%),
+    linear-gradient(180deg, #080b12 0%, #0d121a 45%, #080b12 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
