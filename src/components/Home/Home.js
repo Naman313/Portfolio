@@ -156,10 +156,16 @@ function Home() {
               <div className="orb orb-two" />
               <div className="orb orb-three" />
             </div>
+            <div className="hero-ring hero-ring-one" aria-hidden="true" />
+            <div className="hero-ring hero-ring-two" aria-hidden="true" />
+            <div className="hero-core">
+              <span className="hero-core-kicker">N / D</span>
+              <strong>Crafting<br />with intent.</strong>
+              <span className="hero-core-label">Full Stack Developer</span>
+            </div>
             <div className="hero-badge">→ An artifact from the void.</div>
           </div>
         </div>
-        <div className="scroll-indicator">Scroll</div>
       </section>
 
       <section className="info-section" id="about">

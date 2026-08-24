@@ -12,7 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, updateLoad] = useState(true);
-  const [theme, setTheme] = useState(() => localStorage.getItem("portfolio-theme") || "dark");
+  const [theme, setTheme] = useState(() => localStorage.getItem("portfolio-theme") || "light");
 
   useEffect(() => {
     const timer = setTimeout(() => updateLoad(false), 1200);
